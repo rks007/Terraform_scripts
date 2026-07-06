@@ -5,7 +5,7 @@ variable "tag" {
 
 variable "instance_type" {
   type = string
-  default = "t3.micro"
+  default = "t3.medium"
 }
 
 variable "root_volume_size" {

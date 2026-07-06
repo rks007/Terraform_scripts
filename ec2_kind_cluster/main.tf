@@ -50,6 +50,14 @@ resource "aws_security_group" "ec2_docker_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    description = "App/dev ports"
+    from_port   = 3000
+    to_port     = 9000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -78,6 +86,12 @@ data "cloudinit_config" "ec2_config" {
     content_type = "text/x-shellscript"
     filename     = "install_kind.sh"
     content      = file("${path.module}/scripts/install_kind.sh")
+  }
+
+  part {
+    content_type = "text/x-shellscript"
+    filename     = "install_helm.sh"
+    content      = file("${path.module}/scripts/install_helm.sh")
   }
 
 }
