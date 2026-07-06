@@ -10,6 +10,7 @@ This repository contains Terraform configuration to provision an AWS EC2 instanc
 - `output.tf` - outputs from the deployment
 - `scripts/install_docker.sh` - installs Docker on the EC2 instance
 - `scripts/install_kind.sh` - installs Kind and kubectl on the EC2 instance
+- `scripts/install_helm.sh` - installs helm on the EC2 instance
 
 ## Usage
 
